@@ -1,1 +1,2 @@
 # libgsc
+xzwdev@qq.com
