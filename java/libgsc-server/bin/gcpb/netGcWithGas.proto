@@ -1,0 +1,27 @@
+syntax = "proto2";
+
+import "netComm.proto";
+option java_package = "gcpb";
+
+//GC寻求GAS鉴权请求.
+message GcAuthWithGasReq {
+	optional bytes salt = 1;
+	optional bytes usr = 2;
+	optional bytes key = 3;
+	//
+	required string plat = 4;
+	optional string dev = 5;
+	optional string json = 6;
+}
+
+//GC寻求GAS鉴权响应.
+message GcAuthWithGasRsp {
+	enum Ret {
+		RET_USR_PWD_ERR = 0x10;
+		RET_NET_ERR = 0x11;
+	}
+
+	required bytes token = 1;
+}
+
+

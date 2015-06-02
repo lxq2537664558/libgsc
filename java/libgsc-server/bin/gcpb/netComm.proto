@@ -1,0 +1,22 @@
+syntax = "proto2";
+
+option java_package = "gcpb";
+
+//心跳请求
+message HeartBeatReq {
+	required uint64 ts = 1; //时间戳.
+}
+
+//心跳响应
+message HeartBeatRsp {
+	required uint64 ts = 1; //时间戳.
+}
+
+//主机与端口.
+message HostPort {
+	required string host = 1; //主机.
+	required uint32 port = 2; //端口.
+	required uint32 stat = 3; //状态(0: 正常, 1: 新区, 2: 维护中, 3: 隐藏(客户端不可见)).
+	required string desc = 4; //描述.
+	required uint32 indx = 5; //索引.
+}
